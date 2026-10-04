@@ -6,7 +6,7 @@ export default defineAstroPaperConfig({
     title: "Java",
     description: "A website, designed for PNPE seminars for students in Technical University of Sofia.",
     author: "Borislav Galabov",
-    profile: "https://satna.ing",
+    //profile: "https://satna.ing",
     ogImage: "default-og.jpg",
     lang: "en",
     timezone: "Europe/Sofia",
