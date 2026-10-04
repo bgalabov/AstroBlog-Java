@@ -2,14 +2,14 @@ import { defineAstroPaperConfig } from "./src/types/config";
 
 export default defineAstroPaperConfig({
   site: {
-    url: "https://astro-paper.pages.dev/",
+    url: "https://bgalabov.github.io/AstroBlog-Java/",
     title: "Java",
     description: "A website, designed for PNPE seminars for students in Technical University of Sofia.",
     author: "Borislav Galabov",
     profile: "https://satna.ing",
     ogImage: "default-og.jpg",
     lang: "en",
-    timezone: "Asia/Bangkok",
+    timezone: "Europe/Sofia",
     dir: "ltr",
   },
   posts: {
@@ -24,15 +24,12 @@ export default defineAstroPaperConfig({
     showBackButton: true,
     editPost: {
       enabled: true,
-      url: "https://github.com/satnaing/astro-paper/edit/main/",
+      url: "https://github.com/bgalabov/AstroBlog-Java/edit/main/",
     },
     search: "pagefind",
   },
   socials: [
-    { name: "github",   url: "https://github.com/satnaing/astro-paper" },
-    { name: "x",        url: "https://x.com/username" },
-    { name: "linkedin", url: "https://www.linkedin.com/in/username/" },
-    { name: "mail",     url: "mailto:yourmail@gmail.com" },
+    { name: "github",   url: "https://github.com/bgalabov/AstroBlog-Java" }
   ],
   shareLinks: [
     { name: "whatsapp", url: "https://wa.me/?text=" },
