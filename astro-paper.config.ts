@@ -2,7 +2,7 @@ import { defineAstroPaperConfig } from "./src/types/config";
 
 export default defineAstroPaperConfig({
   site: {
-    url: "https://bgalabov.github.io/AstroBlog-Java/",
+    url: "https://java.bgalabov.eu/",
     title: "Java",
     description: "A website, designed for PNPE seminars for students in Technical University of Sofia.",
     author: "Borislav Galabov",
