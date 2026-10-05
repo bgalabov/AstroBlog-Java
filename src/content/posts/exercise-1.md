@@ -109,7 +109,6 @@ firstCar.accelerate(30);
 
 Car secondCar = new Car();
 secondCar.model = "Honda Civic";
-...
 secondCar.start();
 secondCar.accelerate(50);
 secondCar.stop();
@@ -680,7 +679,7 @@ System.out.println(canEnter); //true
 As we mentioned in the beginning, in the OOP world, we can define our classes. 
 Let's define a `class` named `Person`. 
 In Java (and other OOP languages), we usually define classes in separate files. 
-The file name must be the same as the class name:
+The file name must match the name of the public top-level class.
 
 1. Create `Person.java` file with the following content: 
 
@@ -843,8 +842,9 @@ public static void main(String[] args)
 ```
 Here: 
 - `void` - is the return type. `void` means nothing is returned.
-- `main` - is the method name.
-- `String[] args` — is a parameter named args of type String[] (an array of String objects).- `public static` - these are keywords. We will talk about them later.  
+- `main` - is the method name. 
+- `String[] args` — parameter named `args` of type `String[]`
+- `public static` - these are keywords. We will talk about them later.  
 
 We'll discuss arrays in some of the next exercises. 
 
@@ -1095,8 +1095,14 @@ Write a program that reads an integer from the console and prints whether the nu
 - `negative`
 - `zero`
 
-*Sample input*: 10
-*Sample output*: positive
+**Sample input**: 
+```text
+10
+```
+**Sample output**: 
+```text
+positive
+```
 
 ---
 
@@ -1109,11 +1115,23 @@ Hint:
 ```java
 number % 2
 ```
-*Sample input*: 2
-*Sample output*: even
+**Sample input**: 
+```text
+2
+```
+**Sample output**: 
+```text
+even
+```
 ---
-*Sample input*: 11
-*Sample output*: odd
+**Sample input**: 
+```text
+11
+```
+**Sample output**: 
+```text
+odd
+```
 ---
 
 ### Task 4
@@ -1126,12 +1144,17 @@ Create a method `void showSocialStage()` which:
 - prints `"Adult"` if the person's age is between 18 and 64;
 - prints `"Senior"` if the person's age is 65 or above.
 
-Make a call to `showSocialStage()` method in main(...);
+Call the `showSocialStage()` method from `main()`.
 
-*Sample input*: 
+**Sample input**: 
+```text
 Ivan
 20
-*Sample output*: Adult
+```
+**Sample output**: 
+```text
+Adult
+```
 
 
 
@@ -1214,32 +1237,47 @@ for (int i = 1; i <= 5; i++)
 
 Read an integer `n` from the console and print all numbers from `1` to `n`.
 
-*Sample input*: 3
-*Sample output*: 
+**Sample input**: 
+```text
+3
+```
+**Sample output**:
+```text
 1
 2
 3
+```
 
 
 ### Task 6
 
 Read an integer `n` and print all even numbers from `1` to `n`.
 
-*Sample input*: 11
-*Sample output*: 
+**Sample input**: 
+```text
+11
+```
+**Sample output**:
+```text
 2
 4
 6
 8
 10
+```
 
 ### Task 7
 
 Read an integer `n` and calculate the sum of all integers from `1` to `n`.
 
-*Sample input*: 6
-*Sample output*: 21
-
+**Sample input**: 
+```text
+6
+```
+**Sample output**: 
+```text
+21
+```
 
 
 
