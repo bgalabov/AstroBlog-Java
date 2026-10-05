@@ -5,8 +5,6 @@ modDatetime: 2026-10-08T20:59:05Z
 title: First Exercise
 slug: first-exercise
 featured: false
-image: /assets/images/exercise-1/boy-programming-in-java.png
-ogImage: /assets/images/exercise-1/boy-programming-in-java.png
 draft: false
 tags:
   - java
