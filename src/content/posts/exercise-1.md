@@ -564,6 +564,8 @@ There is an important difference between methods such as `nextInt()` and `nextLi
 Consider the following code:
 
 ```java id="knu021"
+Scanner scanner = new Scanner(System.in);
+
 System.out.print("Enter your age: ");
 int age = scanner.nextInt();
 
