@@ -13,7 +13,7 @@ tags:
 description: First Exercise for the Platform Independent Programming Languages course. 
 ---
 
-![Boy, programming in Java](/assets/images/exercise-1/boy-programming-in-java.png)
+![Boy, programming in Java](/assets/images/exercise-1/boy-programming-in-java.webp)
 
 Java Fundamentals
 ====================
@@ -73,7 +73,7 @@ A **class** defines a type of object — what data objects of that type can cont
 
 This is how we decide to model a car:
 
-![Car](/assets/images/exercise-1/car.png)
+![Car](/assets/images/exercise-1/car.webp)
 
 In Java, the above definition would look like this:
 
