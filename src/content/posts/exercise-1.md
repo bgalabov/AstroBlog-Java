@@ -143,7 +143,7 @@ This allows the same Java bytecode to run on different platforms, as long as an 
 
 This is the idea behind "Write once, run anywhere."
 
-![Language Types](/assets/images/exercise-1/languages_types.png)
+![Language Types](/assets/images/exercise-1/languages_types.webp)
 
 <details>
 <summary>Read more about compiled, interpreted and Java programs</summary>
