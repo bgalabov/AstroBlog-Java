@@ -73,7 +73,7 @@ A **class** defines a type of object — what data objects of that type can cont
 
 This is how we decide to model a car:
 
-![Car](/assets/images/exercise-1/car.webp)
+![Car](/assets/images/exercise-1/car.png)
 
 In Java, the above definition would look like this:
 
