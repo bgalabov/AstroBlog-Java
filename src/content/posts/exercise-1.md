@@ -2,7 +2,7 @@
 author: Borislav Galabov
 pubDatetime: 2026-10-03T10:40:08Z
 modDatetime: 2026-10-08T20:59:05Z
-title: First Exercise
+title: First and Second Exercises
 slug: first-exercise
 featured: false
 draft: false
