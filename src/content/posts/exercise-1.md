@@ -75,7 +75,7 @@ This is how we decide to model a car:
 
 ![Car](/assets/images/exercise-1/car.png)
 
-In Java, the above definition would look like this:
+In Java, the above definition would look like this *(simplified)*:
 
 ```java
 class Car {
@@ -440,6 +440,39 @@ System.out.println("Normal program output.");
 System.err.println("Error or diagnostic output.");
 ```
 
+There are a few special characters that we use with Strings. 
+
+| Special character | Description |
+| --- | --- | 
+| `\n` | New line character. Appends a new line to the String. |
+| `\t` | Tabulation character. Appends a tablulation to the String. |
+| `\` | Backslash. An escape character. We use it to escape special or reserved characters |
+
+Examples: 
+
+```java
+System.out.println("Each \nword \non \nseparate \nrow.");
+
+System.out.println("Tabulation\texapmple");
+
+System.out.println("C:\\Windows");
+
+System.out.println("This is how we write \"quotes\" into String");
+```
+
+We can use `System.out.println(...)` with any data type, it automatically converts it to String. We use the `+` operator to append to String:
+
+```java
+String name = "Dimitar";
+int age = 21;
+double examGrade = 5.50;
+boolean examPassed = true;
+
+System.out.println("Name: " +name + " Age: " +age +" Exam Grade: " +examGrade + "Exam passed: " +examPassed);
+
+```
+
+
 ### Input
 
 `System.in` represents the **standard input stream**.
@@ -599,8 +632,189 @@ System.out.println("Hello " + name);
 char group = scanner.next().charAt(0);
 ```
 
+## Classes and Objects
 
-## Operators
+As we mentioned in the beginning, in the OOP world, we can define our classes. 
+Let's define a `class` named `Person`. 
+In Java (and other OOP languages), we usually define classes in separate files. 
+The file name must match the name of the public top-level class.
+
+1. Create `Person.java` file with the following content: 
+
+```java file="Person.java"
+public class Person {
+  String name;
+  int age;
+  
+  void sayHello() {
+    System.out.println("Hello! My name is " + name +" and I am " + age + " years old.");
+  }
+}
+```
+
+A class defines the data and behavior that objects of that type will have.
+In our example:
+- `name` and `age` are fields — they represent the data of a `Person`.
+- `sayHello()` is a method — it represents behavior of a Person. 
+
+2. Now let's create an object of type `Person`:
+
+```java file="Main.java"
+public class Main {
+
+    public static void main(String[] args) {
+        Person person = new Person();
+        person.name = "Ivan";
+        person.age = 20;
+
+        person.sayHello();
+    }
+}
+```
+
+The expression:
+
+```java
+new Person();
+```
+
+creates a new object, also called an **instance** of the Person
+class.
+
+```java
+Person person
+```
+is a variable of type Person that holds a **reference** to the newly
+created object, hence in the statement: 
+
+```java
+Person person = new Person();
+```
+- `Person` -> type
+- `person` -> variable
+- `new Person()` -> object
+
+
+A class can be thought of as a definition of a type, while an
+object is a particular **instance** of that class.
+
+3. Now, lets add another person: 
+
+```java file="Main.java"
+public class Main {
+
+    public static void main(String[] args) {
+        Person person = new Person();
+        person.name = "Ivan";
+        person.age = 20;
+
+        person.sayHello();
+
+        Person anotherPerson = new Person();
+        anotherPerson.name = "Maria";
+        anotherPerson.age = 22;
+
+        anotherPerson.sayHello();
+    }
+}
+```
+
+Here we have two **instances** of the `Person` class: `person` and `anotherPerson`. 
+
+---
+
+## Methods
+
+A **method** is a named block of code that performs a specific operation. Methods can receive input through parameters and may return a value.
+
+Methods declared in a class can be used to define the behavior of its objects.
+
+In our `Person` class, we have already created a method:
+
+```java
+void sayHello() {
+  System.out.println("Hello! My name is " + name + " and I am " + age + " years old.");
+}
+```
+
+The general syntax of a method is:
+
+```
+returnType methodName(parameters) {
+    // method body
+}
+```
+
+In our example: 
+```java
+void sayHello() {
+  /* method body */
+}
+```
+
+- `void` is the return type;
+- `sayHello` is the method name;
+- `()` contains the method's parameters.
+The keyword `void` means that the method does not return a value.
+
+Methods can also return values:
+
+```java
+int getAge() {
+    return age;
+}
+```
+
+The return type of this method is int, so the method must return an
+integer value:
+
+```java
+int personAge = person.getAge();
+```
+
+Methods can also receive values through parameters:
+
+```java
+void sayHelloTo(String name) {
+    System.out.println("Hello, " + name + "!");
+}
+```
+
+We can call it by passing an argument:
+
+```java
+person.sayHelloTo("Maria");
+```
+
+This is also a method: 
+```java
+public static void main(String[] args)
+```
+Here: 
+- `void` - is the return type. `void` means nothing is returned.
+- `main` - is the method name. 
+- `String[] args` — parameter named `args` of type `String[]`
+- `public static` - these are keywords. We will talk about them later.  
+
+We'll discuss arrays in some of the next exercises. 
+
+---
+
+### Task 1
+
+Write a program that reads a person's **name** and **age** from the console and uses them to create and populate a `Person` object.
+
+After that, call the `sayHello()` method of the created object.
+
+You can use the definition of the `Person` class from the [Classes and Objects section](#classes-and-objects)
+
+---
+
+>If you got to this point, Congratulations. The next topics will be covered in Exercise 2 (i.e. Seminar 2). 
+
+---
+
+## Operators (Seminar 2 topics below)
 
 Now that we know how to store values in variables, let's see what we
 can do with them.
@@ -675,182 +889,6 @@ boolean canEnter = age >= 18 && hasTicket;
 System.out.println(canEnter); //true
 
 ```
-
-## Classes and Objects
-
-As we mentioned in the beginning, in the OOP world, we can define our classes. 
-Let's define a `class` named `Person`. 
-In Java (and other OOP languages), we usually define classes in separate files. 
-The file name must match the name of the public top-level class.
-
-1. Create `Person.java` file with the following content: 
-
-```java file="Person.java"
-public class Person {
-  String name;
-  int age;
-  
-  void sayHello() {
-    System.out.println("Hello! My name is " + name +" and I am " + age + " years old.");
-  }
-}
-```
-
-A class defines the data and behavior that objects of that type will have.
-In our example:
-- `name` and `age` are fields — they represent the data of a `Person`.
-- `sayHello()` is a method — it represents behavior of a Person. 
-
-2. Now let's create an object of type `Person`:
-
-```java file="Main.java"
-public class Main {
-
-    public static void main(String[] args) {
-        Person person = new Person();
-        person.name = "Ivan";
-        person.age = 20;
-
-        person.sayHello();
-    }
-}
-```
-
-The expression:
-
-```java
-new Person();
-```
-
-creates a new object, also called an instance of the Person
-class.
-
-```java
-Person person
-```
-is a variable of type Person that holds a reference to the newly
-created object, hence in the statement: 
-
-```java
-Person person = new Person();
-```
-- `Person` -> type
-- `person` -> variable
-- `new Person()` -> object
-
-
-A class can be thought of as a definition of a type, while an
-object is a particular **instance** of that class.
-
-3. Now, lets add another person: 
-
-```java file="Main.java"
-public class Main {
-
-    public static void main(String[] args) {
-        Person person = new Person();
-        person.name = "Ivan";
-        person.age = 20;
-
-        person.sayHello();
-
-        Person anotherPerson = new Person();
-        anotherPerson.name = "Maria";
-        anotherPerson.age = 22;
-
-        anotherPerson.sayHello();
-    }
-}
-```
-
-Here we have two **instances** of the `Person` class: `person` and `anotherPerson`. 
-
----
-
-### Task 1
-
-Write a program that reads a person's **name** and **age** from the console and uses them to create and populate a `Person` object.
-
-After that, call the `sayHello()` method of the created object.
-
----
-
-## Methods
-
-A **method** is a named block of code that performs a specific operation. Methods can receive input through parameters and may return a value.
-
-Methods declared in a class can be used to define the behavior of its objects.
-
-In our `Person` class, we have already created a method:
-
-```java
-void sayHello() {
-  System.out.println("Hello! My name is " + name + " and I am " + age + " years old.");
-}
-```
-
-The general syntax of a method is:
-
-```
-returnType methodName(parameters) {
-    // method body
-}
-```
-
-In our example: 
-```java
-void sayHello() {
-  /* method body */
-}
-```
-
-- void is the return type;
-- sayHello is the method name;
-- () contains the method's parameters.
-The keyword void means that the method does not return a value.
-
-Methods can also return values:
-
-```java
-int getAge() {
-    return age;
-}
-```
-
-The return type of this method is int, so the method must return an
-integer value:
-
-```java
-int personAge = person.getAge();
-```
-
-Methods can also receive values through parameters:
-
-```java
-void sayHelloTo(String name) {
-    System.out.println("Hello, " + name + "!");
-}
-```
-
-We can call it by passing an argument:
-
-```java
-person.sayHelloTo("Maria");
-```
-
-This is also a method: 
-```java
-public static void main(String[] args)
-```
-Here: 
-- `void` - is the return type. `void` means nothing is returned.
-- `main` - is the method name. 
-- `String[] args` — parameter named `args` of type `String[]`
-- `public static` - these are keywords. We will talk about them later.  
-
-We'll discuss arrays in some of the next exercises. 
-
----
 
 ## Control Flow
 
