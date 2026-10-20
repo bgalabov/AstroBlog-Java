@@ -182,7 +182,7 @@ The `java.util.Arrays` Class gives us a powerful set of methods which operate ov
 | `Arrays.toString(arr)` | Converts the array's elements into a string representation. |
 | `Arrays.equals(arr1, arr2)` | Compares two arrays element by element. |
 | `Arrays.sort(arr)` | Sorts the original array in place. |
-| `Arrays.binarySearch(arr, value)` | Searches a **sorted** array and returns the index if found; otherwise returns a negative value based on the insertion point. |
+| `Arrays.binarySearch(arr, value)` | Searches a **sorted** array and returns the index of `value` if found. If there are duplicates, no guarantee which one will be found; otherwise returns a negative value based on the insertion point. |
 | `Arrays.fill(arr, value)` | Fills the array with the specified value. |
 | `Arrays.copyOf(arr, length)` | Returns a copy of the array with the specified length (truncating or padding as needed). |
 
@@ -426,14 +426,14 @@ Declare two arrays with same elements. Compare them by using:
 
 What is the output in these two cases? 
 
-### Task 4: Sorting Arrays
+### Task 4: Sort and Binary Search. 
 
 Declare the following array: 
 `int[] numbers = {8, 3, 1, 9, 4, 2};`
 
-1. Use the `Arrays.sort(numbers)` method to sort it in ascending order. 
-2. Now, use the `Arrays.copyOf(...)` method to create a copy, prior sorting. 
-3. Print both arrays: prior- and post- sorting. 
+1. Use the `Arrays.sort(...)` method to sort it in ascending order. 
+2. Print the array by using `Arrays.toString(...)` and `System.out.println(...)` methods
+3. Now, use the `Arrays.binarySearch(...)` method to search for a number in the array and print the result of the method (what is it?). 
 
 ### Task 5: Linear Search
 
@@ -442,7 +442,16 @@ The method must return the index of the first match of the `target` number withi
 
 ### Task 6: Reverse an Array
 
-Write a method that takes an int[] array as argument and reverses it, without creating a new array: `public static void reverseArray(int[] array)`. 
+Write a method that takes an int[] array as argument and reverses it, **without creating a new array:** `public static void reverseArray(int[] array)`. 
+
+<details>
+<summary>Hint: </summary>
+You can iterate through the array with two indexes in one loop - one for the array begining and one for the array end. 
+
+- increment the first index (beginning) and decrement the second one (end).  
+- swap the elements
+- loop ends when the two indexes meet (i.e. no elements to swap) 
+</details>
 
 ### Task 7: Count Occurrences
 
@@ -452,6 +461,15 @@ The method must take an array of integers and count the occurences of a specific
 ### Task 8: Remove Dupplicates
 
 Write a method that takes an array of integers and returns new array, which contains only the unique elements, i.e. numbers. Use only arrays and loops. Do not use collections such as ArrayList or HashSet.
+
+<details>
+<summary>Hint: </summary>
+
+- make a second array, which contains the unique elements with the same size as the input array
+- use a variable, to count the elements you had put in the **unique elements array**. 
+- before putting a number into the unique elements array, check whether the number is already present in the unique elements array. 
+- slice the unique elements array with `Arrays.copyOf(...)`, so the returned array contains no empty elements. 
+</details>
 
 
 ### Final Task – Implementing a Dynamic Book Stack Using Arrays
