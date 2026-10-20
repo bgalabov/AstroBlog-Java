@@ -223,9 +223,10 @@ The `java.util.Arrays` Class gives us a powerful set of methods which operate ov
 ```java
     int[] arr = {5, 8, 2, 3};
     Arrays.sort(arr);
+    System.out.println("sorted: " +Arrays.toString(arr));
 
     //returns the index of element with value 5 within arr. 
-    int index = Arrays.binarySearch(arr, 5)
+    int index = Arrays.binarySearch(arr, 5);
     System.out.println(index);
 
 ```
