@@ -213,6 +213,9 @@ The `java.util.Arrays` Class gives us a powerful set of methods which operate ov
 ```java
     int[] arr = {5, 8, 2, 3};
     Arrays.sort(arr);
+
+    System.out.println(Arrays.toString(arr));
+
 ```
 
 `Arrays.binarySearch(...)` example:  
@@ -233,6 +236,8 @@ The `java.util.Arrays` Class gives us a powerful set of methods which operate ov
     int[] arr = new int[5];
 
     Arrays.fill(arr, 99);
+
+    System.out.println(Arrays.toString(arr));
 ```
 
 `Arrays.copyOf(arr, length)` examples: 
